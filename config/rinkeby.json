@@ -1,0 +1,8 @@
+{
+  "network": "rinkeby",
+  "startBlock": 8020387,
+  "stakingAddress": "0x1Da1B0e5DdcC97Ec8C9Ac093ab79DD3D5D8A58F6",
+  "yieldFarmLPAddress": "0x0E7f2297060c72B7685E6EB7a471e9cCF2e28015",
+  "yieldFarmXfundAddress": "0xF9fea950b33D76FA0C4bFE2ce93ef31F0F5A0885",
+  "communityVaultAddress": "0xb100bDb465ffd26F90B950EF9cE1cc8521351818"
+}

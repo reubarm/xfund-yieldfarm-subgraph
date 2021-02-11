@@ -1,0 +1,96 @@
+specVersion: 0.0.2
+description: xFUND-YieldFarm
+repository: https://github.com/unification-com/xfund-yieldfarm-subgraph
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: Staking
+    network: {{network}}
+    source:
+      address: '{{stakingAddress}}'
+      abi: Staking
+      startBlock: {{startBlock}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Staking
+      abis:
+        - name: Staking
+          file: ./abis/Staking.json
+      eventHandlers:
+        - event: Deposit(indexed address,indexed address,uint256)
+          handler: handleDeposit
+        - event: Withdraw(indexed address,indexed address,uint256)
+          handler: handleWithdraw
+        - event: ManualEpochInit(indexed address,indexed uint128,address[])
+          handler: handleManualEpochInit
+        - event: EmergencyWithdraw(indexed address,indexed address,uint256)
+          handler: handleEmergencyWithdraw
+      file: ./src/mapping.ts
+  - kind: ethereum/contract
+    name: YieldFarmLP
+    network: {{network}}
+    source:
+      address: '{{yieldFarmLPAddress}}'
+      abi: YieldFarmLP
+      startBlock: {{startBlock}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - YieldFarmLP
+      abis:
+        - name: YieldFarmLP
+          file: ./abis/YieldFarmLP.json
+      eventHandlers:
+        - event: MassHarvest(indexed address,uint256,uint256)
+          handler: handleMassHarvestLP
+        - event: Harvest(indexed address,indexed uint128,uint256)
+          handler: handleHarvestLP
+      file: ./src/mapping_yieldFarm.ts
+  - kind: ethereum/contract
+    name: YieldFarmXfund
+    network: {{network}}
+    source:
+      address: '{{yieldFarmXfundAddress}}'
+      abi: YieldFarmXfund
+      startBlock: {{startBlock}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - YieldFarmXfund
+      abis:
+        - name: YieldFarmXfund
+          file: ./abis/YieldFarmXfund.json
+      eventHandlers:
+        - event: MassHarvest(indexed address,uint256,uint256)
+          handler: handleMassHarvestXfund
+        - event: Harvest(indexed address,indexed uint128,uint256)
+          handler: handleHarvestXfund
+      file: ./src/mapping_yieldFarm.ts
+  - kind: ethereum/contract
+    name: CommunityVault
+    network: {{network}}
+    source:
+      address: '{{communityVaultAddress}}'
+      abi: CommunityVault
+      startBlock: {{startBlock}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - CommunityVault
+      abis:
+        - name: CommunityVault
+          file: ./abis/CommunityVault.json
+      eventHandlers:
+        - event: SetAllowance(indexed address,indexed address,uint256)
+          handler: handleSetAllowance
+      file: ./src/mapping_communityVault.ts
