@@ -1,0 +1,23 @@
+{
+  "name": "xfund-yieldfarm-subgraph",
+  "version": "0.1.0",
+  "scripts": {
+    "create": "graph create unification-com/xfund-yieldfarm-subgraph --node https://api.thegraph.com/deploy/",
+    "create-local": "graph unification-com/xfund-yieldfarm-subgraph --node http://127.0.0.1:8020",
+    "prepare:mainnet": "mustache config/mainnet.json subgraph.template.yaml > subgraph.yaml",
+    "prepare:rinkeby": "mustache config/rinkeby.json subgraph.template.yaml > subgraph.yaml",
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy unification-com/xfund-yieldfarm-subgraph --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
+    "deploy-local": "graph deploy unification-com/xfund-yieldfarm-subgraph --ipfs http://localhost:5001 --node http://127.0.0.1:8020"
+  },
+  "devDependencies": {
+    "@graphprotocol/graph-cli": "^0.18.0",
+    "@graphprotocol/graph-ts": "^0.18.1",
+    "mustache": "^4.1.0"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "babel-register": "^6.26.0"
+  }
+}

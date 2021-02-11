@@ -1,0 +1,8 @@
+{
+  "network": "mainnet",
+  "startBlock": 0,
+  "stakingAddress": "",
+  "yieldFarmLPAddress": "",
+  "yieldFarmXfundAddress": "",
+  "communityVaultAddress": ""
+}
