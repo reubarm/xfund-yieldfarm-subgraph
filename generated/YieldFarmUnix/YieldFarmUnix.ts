@@ -62,9 +62,9 @@ export class MassHarvest__Params {
   }
 }
 
-export class YieldFarmXfund extends ethereum.SmartContract {
-  static bind(address: Address): YieldFarmXfund {
-    return new YieldFarmXfund("YieldFarmXfund", address);
+export class YieldFarmUnix extends ethereum.SmartContract {
+  static bind(address: Address): YieldFarmUnix {
+    return new YieldFarmUnix("YieldFarmUnix", address);
   }
 
   EPOCHS_DELAYED_FROM_STAKING_CONTRACT(): BigInt {
@@ -336,7 +336,7 @@ export class ConstructorCall__Inputs {
     this._call = call;
   }
 
-  get xfundTokenAddress(): Address {
+  get unixTokenAddress(): Address {
     return this._call.inputValues[0].value.toAddress();
   }
 

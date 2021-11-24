@@ -1,5 +1,5 @@
 import {Harvest as HarvestEventLP, MassHarvest as MassHarvestEventLP} from '../generated/YieldFarmLP/YieldFarmLP'
-import {Harvest as HarvestEventXfund, MassHarvest as MassHarvestEventXfund} from '../generated/YieldFarmXfund/YieldFarmXfund'
+import {Harvest as HarvestEventUnix, MassHarvest as MassHarvestEventUnix} from '../generated/YieldFarmUnix/YieldFarmUnix'
 import {Harvest, MassHarvest} from '../generated/schema'
 
 export function handleMassHarvestLP(event: MassHarvestEventLP): void {
@@ -15,7 +15,7 @@ export function handleMassHarvestLP(event: MassHarvestEventLP): void {
     mh.save()
 }
 
-export function handleMassHarvestXfund(event: MassHarvestEventXfund): void {
+export function handleMassHarvestUnix(event: MassHarvestEventUnix): void {
     let id = event.transaction.hash.toHex() + "_" + event.transactionLogIndex.toString()
 
     let mh = new MassHarvest(id)
@@ -41,7 +41,7 @@ export function handleHarvestLP(event: HarvestEventLP): void {
     h.save()
 }
 
-export function handleHarvestXfund(event: HarvestEventXfund): void {
+export function handleHarvestUnix(event: HarvestEventUnix): void {
     let id = event.transaction.hash.toHex() + "_" + event.transactionLogIndex.toString()
 
     let h = new Harvest(id)

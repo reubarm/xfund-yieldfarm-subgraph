@@ -1,6 +1,6 @@
 specVersion: 0.0.2
-description: xFUND-YieldFarm
-repository: https://github.com/unification-com/xfund-yieldfarm-subgraph
+description: UniX-YieldFarm
+repository: https://github.com/reubarm/xfund-yieldfarm-subgraph
 schema:
   file: ./schema.graphql
 dataSources:
@@ -53,26 +53,26 @@ dataSources:
           handler: handleHarvestLP
       file: ./src/mapping_yieldFarm.ts
   - kind: ethereum/contract
-    name: YieldFarmXfund
+    name: YieldFarmUnix
     network: {{network}}
     source:
-      address: '{{yieldFarmXfundAddress}}'
-      abi: YieldFarmXfund
+      address: '{{yieldFarmUnixAddress}}'
+      abi: YieldFarmUnix
       startBlock: {{startBlock}}
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
       language: wasm/assemblyscript
       entities:
-        - YieldFarmXfund
+        - YieldFarmUnix
       abis:
-        - name: YieldFarmXfund
-          file: ./abis/YieldFarmXfund.json
+        - name: YieldFarmUnix
+          file: ./abis/YieldFarmUnix.json
       eventHandlers:
         - event: MassHarvest(indexed address,uint256,uint256)
-          handler: handleMassHarvestXfund
+          handler: handleMassHarvestUnix
         - event: Harvest(indexed address,indexed uint128,uint256)
-          handler: handleHarvestXfund
+          handler: handleHarvestUnix
       file: ./src/mapping_yieldFarm.ts
   - kind: ethereum/contract
     name: CommunityVault

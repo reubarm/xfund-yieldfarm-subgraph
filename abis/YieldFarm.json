@@ -8,7 +8,17 @@
       },
       {
         "internalType": "address",
-        "name": "uniLP",
+        "name": "usdc",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "susd",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "dai",
         "type": "address"
       },
       {
@@ -74,19 +84,6 @@
     ],
     "name": "MassHarvest",
     "type": "event"
-  },
-  {
-    "inputs": [],
-    "name": "EPOCHS_DELAYED_FROM_STAKING_CONTRACT",
-    "outputs": [
-      {
-        "internalType": "uint128",
-        "name": "",
-        "type": "uint128"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
   },
   {
     "inputs": [],

@@ -1,8 +1,8 @@
 {
   "network": "mainnet",
-  "startBlock": 0,
+  "startBlock": 11862754,
   "stakingAddress": "",
   "yieldFarmLPAddress": "",
-  "yieldFarmXfundAddress": "",
+  "yieldFarmUnixAddress": "",
   "communityVaultAddress": ""
 }

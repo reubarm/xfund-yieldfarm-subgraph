@@ -67,6 +67,29 @@ export class YieldFarmLP extends ethereum.SmartContract {
     return new YieldFarmLP("YieldFarmLP", address);
   }
 
+  EPOCHS_DELAYED_FROM_STAKING_CONTRACT(): BigInt {
+    let result = super.call(
+      "EPOCHS_DELAYED_FROM_STAKING_CONTRACT",
+      "EPOCHS_DELAYED_FROM_STAKING_CONTRACT():(uint128)",
+      []
+    );
+
+    return result[0].toBigInt();
+  }
+
+  try_EPOCHS_DELAYED_FROM_STAKING_CONTRACT(): ethereum.CallResult<BigInt> {
+    let result = super.tryCall(
+      "EPOCHS_DELAYED_FROM_STAKING_CONTRACT",
+      "EPOCHS_DELAYED_FROM_STAKING_CONTRACT():(uint128)",
+      []
+    );
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value = result.value;
+    return ethereum.CallResult.fromValue(value[0].toBigInt());
+  }
+
   NR_OF_EPOCHS(): BigInt {
     let result = super.call("NR_OF_EPOCHS", "NR_OF_EPOCHS():(uint256)", []);
 
@@ -313,7 +336,7 @@ export class ConstructorCall__Inputs {
     this._call = call;
   }
 
-  get xFundTokenAddress(): Address {
+  get unixTokenAddress(): Address {
     return this._call.inputValues[0].value.toAddress();
   }
 

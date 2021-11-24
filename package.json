@@ -1,5 +1,5 @@
 {
-  "name": "xfund-yieldfarm-subgraph",
+  "name": "unix-subgraph",
   "version": "0.1.0",
   "scripts": {
     "create": "graph create unification-com/xfund-yieldfarm-subgraph --node https://api.thegraph.com/deploy/",
@@ -8,8 +8,8 @@
     "prepare:rinkeby": "mustache config/rinkeby.json subgraph.template.yaml > subgraph.yaml",
     "codegen": "graph codegen",
     "build": "graph build",
-    "deploy": "graph deploy unification-com/xfund-yieldfarm-subgraph --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
-    "deploy-local": "graph deploy unification-com/xfund-yieldfarm-subgraph --ipfs http://localhost:5001 --node http://127.0.0.1:8020"
+    "deploy": "graph deploy reubarm/unix-gaming --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
+    "deploy-local": "graph deploy reubarm/unix-gaming --ipfs http://localhost:5001 --node http://127.0.0.1:8020"
   },
   "devDependencies": {
     "@graphprotocol/graph-cli": "^0.18.0",

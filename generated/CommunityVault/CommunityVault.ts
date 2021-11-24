@@ -96,7 +96,7 @@ export class ConstructorCall__Inputs {
     this._call = call;
   }
 
-  get xfund(): Address {
+  get unix(): Address {
     return this._call.inputValues[0].value.toAddress();
   }
 }
