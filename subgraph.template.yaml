@@ -1,6 +1,6 @@
 specVersion: 0.0.2
 description: UniX-YieldFarm
-repository: https://github.com/reubarm/unix-gaming
+repository: https://github.com/reubarm/xfund-yieldfarm-subgraph
 schema:
   file: ./schema.graphql
 dataSources:
