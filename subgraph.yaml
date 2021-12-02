@@ -6,11 +6,11 @@ schema:
 dataSources:
   - kind: ethereum/contract
     name: Staking
-    network: rinkeby
+    network: mainnet
     source:
-      address: '0x84D72A804bC00DABe61de2Edf3131acCe3e83ef1'
+      address: '0x0c374f9886949C58bD2B439Ac3501Cd5321A7A0f'
       abi: Staking
-      startBlock: 9693500
+      startBlock: 13726757
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
@@ -32,11 +32,11 @@ dataSources:
       file: ./src/mapping.ts
   - kind: ethereum/contract
     name: YieldFarmLP
-    network: rinkeby
+    network: mainnet
     source:
-      address: '0x329cd24CDbcF58f1011A56A077E8A5cAd5c8B5E3'
+      address: '0xFAaDf53DAf0B2B32D5F2Db14F1F23FA57BA51304'
       abi: YieldFarmLP
-      startBlock: 9693500
+      startBlock: 13726757
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
@@ -54,11 +54,11 @@ dataSources:
       file: ./src/mapping_yieldFarm.ts
   - kind: ethereum/contract
     name: YieldFarmUnix
-    network: rinkeby
+    network: mainnet
     source:
-      address: '0x8eD7Ff716e9462C71CA0496C82CAFA6ec4997565'
+      address: '0x98E0d8FC5d7B2341Ea943f9B4cf020dB672d5e10'
       abi: YieldFarmUnix
-      startBlock: 9693500
+      startBlock: 13726757
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
@@ -76,11 +76,11 @@ dataSources:
       file: ./src/mapping_yieldFarm.ts
   - kind: ethereum/contract
     name: CommunityVault
-    network: rinkeby
+    network: mainnet
     source:
-      address: '0x69D1C2F23C1665A5d19e78106522e8e05d407dA1'
+      address: '0xCEcD8d0594E9D6F3b00e7cA1B8BE6848FF0282BB'
       abi: CommunityVault
-      startBlock: 9693500
+      startBlock: 13726757
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
