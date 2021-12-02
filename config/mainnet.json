@@ -1,8 +1,8 @@
 {
   "network": "mainnet",
-  "startBlock": 11862754,
-  "stakingAddress": "",
-  "yieldFarmLPAddress": "",
-  "yieldFarmUnixAddress": "",
-  "communityVaultAddress": ""
+  "startBlock": 13726757,
+  "stakingAddress": "0x0c374f9886949C58bD2B439Ac3501Cd5321A7A0f",
+  "yieldFarmLPAddress": "0xFAaDf53DAf0B2B32D5F2Db14F1F23FA57BA51304",
+  "yieldFarmUnixAddress": "0x98E0d8FC5d7B2341Ea943f9B4cf020dB672d5e10",
+  "communityVaultAddress": "0xCEcD8d0594E9D6F3b00e7cA1B8BE6848FF0282BB"
 }
